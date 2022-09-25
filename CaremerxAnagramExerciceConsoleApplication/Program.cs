@@ -24,22 +24,31 @@ namespace CaremerxAnagramExerciceConsoleApplication
             //Function that return True if Anagram and False if not Anagram
             bool areAnagram(string s1, string s2)
             {
-                //Converting the string to an array of char and all in lower case
-                char[] array1 = s1.ToLower().ToCharArray();
-                char[] array2 = s2.ToLower().ToCharArray();
-
-                //Sort both Arrays
-                Array.Sort(array1);
-                Array.Sort(array2);
-
-                //Convert the Array of char to a string
-                string resultString1 = new string(array1);
-                string resultString2 = new string(array2);
-
-                if (resultString1 == resultString2)
-                    return true;
-                else
+                //test the lengh of the two words
+                if (s1.Length != s2.Length)
+                {
                     return false;
+                }
+                else
+                {
+
+                    //Converting the string to an array of char and all in lower case
+                    char[] array1 = s1.ToLower().ToCharArray();
+                    char[] array2 = s2.ToLower().ToCharArray();
+
+                    //Sort both Arrays
+                    Array.Sort(array1);
+                    Array.Sort(array2);
+
+                    //Convert the Array of char to a string
+                    string resultString1 = new string(array1);
+                    string resultString2 = new string(array2);
+
+                    if (resultString1 == resultString2)
+                        return true;
+                    else
+                        return false;
+                }
 
             }
         }
