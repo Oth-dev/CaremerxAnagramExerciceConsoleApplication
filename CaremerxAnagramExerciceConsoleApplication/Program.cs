@@ -12,8 +12,10 @@ namespace CaremerxAnagramExerciceConsoleApplication
             string1 = Console.ReadLine();
             Console.Write("Enter second string: ");
             string2 = Console.ReadLine();
-    
+
             //Compare the strings, they should match if they are Anagrams
+            //Space matters : 'listen' and 's ilent' are not Anagrams but 'listen' and 'silent' are Anagrams
+
             if (areAnagram(string1, string2))
                 Console.WriteLine(string1 + " and " + string2 + " are anagrams.");
             else
