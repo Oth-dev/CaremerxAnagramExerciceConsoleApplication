@@ -16,7 +16,9 @@ namespace CaremerxAnagramExerciceConsoleApplication
             //Compare the strings, they should match if they are Anagrams
             //Space matters : 'listen' and 's ilent' are not Anagrams but 'listen' and 'silent' are Anagrams
 
-            if (areAnagram(string1, string2))
+            if (string1.Trim() ==""|| string2.Trim() == "")
+                Console.WriteLine("Wrong values entered !!!");
+            else if (areAnagram(string1, string2))
                 Console.WriteLine(string1 + " and " + string2 + " are anagrams.");
             else
                 Console.WriteLine(string1 + " and " + string2 + " are not anagrams.");
@@ -31,7 +33,7 @@ namespace CaremerxAnagramExerciceConsoleApplication
                 {
                     return false;
                 }
-                else
+                else if (s1 != s2)// the two entries should be distinct
                 {
 
                     //Converting the string to an array of char and all in lower case
@@ -51,6 +53,7 @@ namespace CaremerxAnagramExerciceConsoleApplication
                     else
                         return false;
                 }
+                else return false;
 
             }
         }
